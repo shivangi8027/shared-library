@@ -1,4 +1,5 @@
-@Library("first-shared-lib") _
+#!/usr/bin/env groovy
+@Library('first-shared-lib') _
 pipeline {
   agent any
   stages {
