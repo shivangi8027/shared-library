@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage ("Setup Stage") {
       steps {
-      echo "Hellp"
+      welcomeJob ‘lambdatest’
       }
 }
 }
