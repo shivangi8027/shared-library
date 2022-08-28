@@ -1,2 +1,2 @@
 @Library('first-shared-lib') _
-welcomeJob("shivangi")
+welcomeJob "shivangi"
