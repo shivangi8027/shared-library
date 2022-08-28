@@ -8,5 +8,18 @@ pipeline {
         welcomeJob "lambdatest"
         }
 }
+      stage ("test groovy") {
+        steps {
+        script {
+         def customImage = "HELLO"
+			if (${customImage} == 'HELLO') {
+                        echo 'I only execute on the master branch'
+                    } else {
+                        echo 'I execute elsewhere'
+                    }
+         
+        }
+      }
+    }
 }
 }
