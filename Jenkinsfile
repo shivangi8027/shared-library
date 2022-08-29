@@ -34,8 +34,10 @@ pipeline {
         }
       }
       steps {
+        script {
         sh "echo ${params.Environment}"
 
+      }
       }
     }
   }
