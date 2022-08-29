@@ -15,7 +15,7 @@ pipeline {
       steps {
         script {
           def customImage = "HELLO"
-          if ("${customImage}" == 'HELLP') {
+          if ("${customImage}" == 'HELLO') {
             echo 'I only execute on the master branch'
           } else {
             echo 'I execute elsewhere'
