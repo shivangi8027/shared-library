@@ -18,7 +18,7 @@ pipeline {
           } else {
             echo 'I execute elsewhere'
             currentBuild.result = 'ABORTED'
-            error('Stopping early…')
+            
           }
 
         }
