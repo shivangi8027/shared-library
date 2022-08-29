@@ -6,7 +6,9 @@ pipeline {
   stages {
     stage("Setup Stage") {
       steps {
+        script {
         welcomeJob "lambdatest"
+        }
       }
     }
     stage("test groovy") {
