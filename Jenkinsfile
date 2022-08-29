@@ -17,6 +17,8 @@ pipeline {
             echo 'I only execute on the master branch'
           } else {
             echo 'I execute elsewhere'
+            currentBuild.result = 'ABORTED'
+            error('Stopping early…')
           }
 
         }
