@@ -26,9 +26,7 @@ pipeline {
     stage("test groovy1") {
       when {
         allOf {
-          expression $ {
-            params.Environment == "Stage"
-          }
+          expression {params.Environment == "Stage"}
         }
       }
       steps {
