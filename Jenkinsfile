@@ -11,21 +11,7 @@ pipeline {
         }
       }
     }
-    stage("test groovy") {
-      steps {
-        script {
-          def customImage = "HELLO"
-          if ("${customImage}" == 'HELLO') {
-            echo 'I only execute on the master branch'
-          } else {
-            echo 'I execute elsewhere'
-            currentBuild.result = 'ABORTED'
-            
-          }
 
-        }
-      }
-    }
 
     stage("test groovy1") {
       when {
