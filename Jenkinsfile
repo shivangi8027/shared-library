@@ -14,7 +14,7 @@ pipeline {
 	  steps {
 		checkout scm: [$class: 'GitSCM', userRemoteConfigs: [[url: 'https://github.com/shivangi8027/shared-library.git' ]], branches: [[name: params.BRANCH_NAME]]], poll: false
 	  }
-	  'refs/tags/${TAG}'
+	
 	}
    stage('Checkout tag') {
 	when {
