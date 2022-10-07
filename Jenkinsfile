@@ -6,12 +6,15 @@ pipeline {
   stages {
   
   stage('Checkout') {
-	  when {
-		expression {params.BRANCH_NAME != ""}
+	when {
+	   allOf{
+              expression {params.BRANCH_NAME != ""}
+	   }
+	  }
 	  steps {
 		checkout scm: [$class: 'GitSCM', userRemoteConfigs: [[url: 'https://github.com/shivangi8027/shared-library.git' ]], branches: [[name: '{params.BRANCH_NAME}']]], poll: false
 	  }
-	  }
+	  
 	}
 	stage ("copy file"){
 	steps {
