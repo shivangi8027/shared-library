@@ -6,27 +6,12 @@ pipeline {
   stages {
   
   stage('Checkout Branch') {
-	when {
-	   allOf{
-              expression {params.BRANCH_NAME != ""}
-	   }
-	  }
-	  steps {
-		checkout scm: [$class: 'GitSCM', userRemoteConfigs: [[url: 'https://github.com/shivangi8027/shared-library.git' ]], branches: [[name: params.BRANCH_NAME]]], poll: false
+  steps {
+	checkout scm: [$class: 'GitSCM', userRemoteConfigs: [[url: 'https://github.com/shivangi8027/shared-library.git' ]], branches: [[name: params.BRANCH_NAME]]], poll: false
 	  }
 	
 	}
-   stage('Checkout tag') {
-	when {
-	   allOf{
-	      expression {params.TAG_NAME != ""}
-	   }
-	  }
-	  steps {
-		checkout scm: [$class: 'GitSCM', userRemoteConfigs: [[url: 'https://github.com/shivangi8027/shared-library.git' ]], branches: [[name: 'refs/tags/${TAG_NAME}']]], poll: false
-	  }
 
-	}
 	stage ("copy file"){
 	steps {
 		sh "cp test2.txt /home/azureuser/mytest45/"
