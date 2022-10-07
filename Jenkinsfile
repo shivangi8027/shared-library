@@ -4,9 +4,13 @@
 pipeline {
   agent any
   stages {
+  
   stage('Checkout') {
+	  when {
+		expression {params.BRANCH_NAME != ""}
 	  steps {
-		checkout scm: [$class: 'GitSCM', userRemoteConfigs: [[url: 'https://github.com/shivangi8027/shared-library.git' ]], branches: [[name: 'refs/tags/v1.0.8']]], poll: false
+		checkout scm: [$class: 'GitSCM', userRemoteConfigs: [[url: 'https://github.com/shivangi8027/shared-library.git' ]], branches: [[name: '{params.BRANCH_NAME}']]], poll: false
+	  }
 	  }
 	}
 	stage ("copy file"){
