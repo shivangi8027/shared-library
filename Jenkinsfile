@@ -11,7 +11,7 @@ pipeline {
 	}
 	stage ("copy file"){
 	steps {
-		sh "cp test1.txt /home/azureuser/"
+		sh "cp test1.txt /home/azureuser/mytest45/"
 	}
 	}
     stage("Setup Stage") {
