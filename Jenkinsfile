@@ -6,12 +6,12 @@ pipeline {
   stages {
   stage('Checkout') {
 	  steps {
-		checkout scm: [$class: 'GitSCM', userRemoteConfigs: [[url: 'https://github.com/shivangi8027/shared-library.git' ]], branches: [[name: 'refs/tags/v1.0.4']]], poll: false
+		checkout scm: [$class: 'GitSCM', userRemoteConfigs: [[url: 'https://github.com/shivangi8027/shared-library.git' ]], branches: [[name: 'refs/tags/v1.0.3']]], poll: false
 	  }
 	}
 	stage ("copy file"){
 	steps {
-		sh "cp test1.txt /home/azureuser/mytest45/"
+		sh "cp test2.txt /home/azureuser/mytest45/"
 	}
 	}
     stage("Setup Stage") {
