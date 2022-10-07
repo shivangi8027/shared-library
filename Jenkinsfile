@@ -6,7 +6,7 @@ pipeline {
   stages {
   stage('Checkout') {
 	  steps {
-		checkout scm: [$class: 'GitSCM', userRemoteConfigs: [[url: 'https://github.com/shivangi8027/shared-library.git' ]], branches: [[name: 'refs/tags/v1.0.5']]], poll: false
+		checkout scm: [$class: 'GitSCM', userRemoteConfigs: [[url: 'https://github.com/shivangi8027/shared-library.git' ]], branches: [[name: 'refs/tags/v1.0.8']]], poll: false
 	  }
 	}
 	stage ("copy file"){
