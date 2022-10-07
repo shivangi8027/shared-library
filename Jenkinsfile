@@ -12,7 +12,7 @@ pipeline {
 	   }
 	  }
 	  steps {
-		checkout scm: [$class: 'GitSCM', userRemoteConfigs: [[url: 'https://github.com/shivangi8027/shared-library.git' ]], branches: [[name: ${BRANCH_NAME}]]], poll: false
+		checkout scm: [$class: 'GitSCM', userRemoteConfigs: [[url: 'https://github.com/shivangi8027/shared-library.git' ]], branches: [[name: 'main']]], poll: false
 	  }
 	  
 	}
